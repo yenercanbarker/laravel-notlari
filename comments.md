@@ -21,3 +21,5 @@ PHPStorm CTRL + / ile tek satır comment oluşturabiliriz, veya // /* */
  }
 ```
   
+  
+Bu ders notu [Laravel Daily](https://www.youtube.com/channel/UCTuplgOBi6tJIlesIboymGA) youtube kanalında **Povilas Korop** tarafından hazırlanan [Comment-Driven and TODO-Driven](https://www.youtube.com/watch?v=mMkNybbAMGw) adlı videodaki bilgiler kullanılarak oluşturulmuştur.
