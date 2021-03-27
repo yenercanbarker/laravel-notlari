@@ -21,3 +21,6 @@
 ```php
 (new FastExcel($users))->export('file.xlsx');
 ```
+
+Bu ders notu [Laravel Daily](https://www.youtube.com/channel/UCTuplgOBi6tJIlesIboymGA) youtube kanalında **Povilas Korop** tarafından hazırlanan 
+[FastExcel Package Laravel](https://www.youtube.com/watch?v=ULk-8kdKNsI) adlı videodaki bilgiler kullanılarak oluşturulmuştur.
