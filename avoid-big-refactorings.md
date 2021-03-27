@@ -32,3 +32,7 @@ use App\Models\User;
 $users = User::popular()->active()->get();
 ```
 
+Bu ders notu [Laravel Daily](https://www.youtube.com/channel/UCTuplgOBi6tJIlesIboymGA) youtube kanalında **Povilas Korop** tarafından hazırlanan 
+[Two Tips to Avoid Big Refactorings in Laravel](https://www.youtube.com/watch?v=m0nUNRKfspo) adlı videodaki bilgiler kullanılarak oluşturulmuştur.
+
+
