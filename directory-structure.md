@@ -42,3 +42,5 @@ log dosyalarını saklamak için kullanılır.
   komutuyla storage içine link oluşturabiliriz.
 * **Tests** klasörü : **Test**'lerin bulunduğu klasördür. **php artisan test** komutuyla testleri çalıştırabiliriz.
 * **Vendor** klasörü : **Composer Dependency**'leri barındıran klasördür.
+
+Bu not Laravel'in resmi dökümantasyonundaki [Structure](https://laravel.com/docs/8.x/structure) sayfasındaki veriler kullanılarak hazırlanmıştır.
