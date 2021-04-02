@@ -31,6 +31,21 @@ Route::get('/token', function (Request $request) {
 * **routes/web.php** içerisindeki bütün route'lar web middleware'ine bağlıdır, bu tarz dışardan gelen istekleri web içine yazmamalıyız.
 **App\Providers\RouteServiceProvider** içinde VerifyCsrfToken middleware'inde **$except** property'si içerisinde url'leri ekleyebiliriz.
 
+* **App\Http\Middleware\VerifyCsrfToken** middleware'i csrf token'i yalnızca post parametresi olarak almak zorunda değildir. Html meta etiketi olarak token'i
+tanıtıp, formu göndereceğimiz yere header parametresi olarak gönderebiliriz.
+
+```blade
+<meta name="csrf-token" content{{ csrf_token() }}>
+```
+
+```js
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+```
+
 Bu not [Laravel](https://laravel.com/)'in orjinal dökümantasyonundaki [CSRF Token](https://laravel.com/docs/8.x/csrf) sayfasındaki bilgiler kullanılarak 
 hazırlanmıştır.
 
