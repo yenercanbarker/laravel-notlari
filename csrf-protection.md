@@ -35,7 +35,7 @@ Route::get('/token', function (Request $request) {
 tanıtıp, formu göndereceğimiz yere header parametresi olarak gönderebiliriz.
 
 ```blade
-<meta name="csrf-token" content{{ csrf_token() }}>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 ```
 
 ```js
