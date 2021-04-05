@@ -43,5 +43,12 @@ $method = $request->method();
 if ($request->isMethod('post')) {}
 ```
 
+* **Illuminate\Http\Request**'in **header** methodunu kullanarak isteğin geldiği header'ı alabiliriz. Header gelmediyse null döner, ikinci parametre ekleyerek
+null yerine bir değer döndürebiliriz.
+
+```php
+$request->header('header-name');
+```
+
 
 
