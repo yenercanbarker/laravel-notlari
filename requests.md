@@ -163,17 +163,66 @@ if($request->filled('name')) {}
 if($request->missing('name')) {}
 ```
 
+* Form'u gönderdiğimizde, form validation işlemi başarısız olursa Laravel bize gönderdiğimiz verileri tekrar kullanıp kullanıcıyı gösterebilmek için
+**flash** fonksiyonunu kullanmamıza olanak sağlar.
+  * **flash**, form verilerini session'a al.
+  * **flashOnly**, forma istediğimiz(dizi şeklinde veriyoruz) verileri session'a al.
+  * **flashExcept**, forma istemediğimiz değerler(dizi şeklinde veriyoruz) hariç kalan verileri session'a al.
 
 
 
+```php
+$request->flash();
 
+$request->flashOnly(['username', 'email']);
 
+$request->flashExcept('password');
+```
 
+* Redirect methodu ile birleştirerek **withInput** fonksiyonu ile redirect ve input verilerini kullanabiliriz.
 
+```php
+return redirect('form')->withInput(
+    $request->except('password')
+);
+```
 
+* Session'a aldığımız form değerlerini **old** methodu ile alabiliriz.
+ 
+```php
+$request->old('username');
+```
 
+* Laravel'in sağladığı **old** global helper'ı kullanarak blade içerisinde session'daki form verisini basabiliriz.
 
+```php
+<input type="text" name="username" value="{{ old('username') }}">
+```
 
+* Request ile dosya yüklemeleri de yapılabilir. **file** methodunu kullanarak dosyaları alabiliriz.
+
+```php
+$file = $request->file('image');
+$file = $request->image;
+```
+
+* Bir input isminden dosya olup olmadığını anlamak için **hasFile** methodunu kulanabiliriz.
+  * **isValid** methoduyla dosyanın gelip gelmediğini kontrol edebiliriz.
+
+```php
+if($request->hasFile('image')) {}
+
+if($request->file('image')->isValid()) {}
+```
+
+* **path** methdou ile dosyanın yerini ve **extension** ile dosyanın uzantısını alabiliriz.
+
+```php
+$path = $request->photo->path();
+$extension = $request->photo->extension();
+```
+
+ Bu not [Laravel 8](https://laravel.com/docs/8.x)'in orjinal dökümantasyonundaki, [HTTP Request](https://laravel.com/docs/8.x/requests) sayfasındaki bilgiler kullanılarak oluşturulmuştur.
 
 
 
