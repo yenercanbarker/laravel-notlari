@@ -1,7 +1,7 @@
  ## Observers
  
-* Bir model'de gerçekleşen birden fazla olayı kuualnıyorsak, model içerisindeki bütün işlemleri tek bir sınıfta toplayabiliriz.
-  * Observer sınıfları Eloquent eventlerin dinlemesini için isimlendirilmiştir.
+* Bir model'de gerçekleşen birden fazla olayı kullanıyorsak, model içerisindeki bütün işlemleri tek bir sınıfta toplayabiliriz.
+  * Observer sınıfları Eloquent eventlerin dinlemesi için model isimleri ve Observer ile isimlendirilirler **UserObserver**.
   * Her event model'de o event tetiklendiği zaman çalışır.
 
 * Observer oluşturmak için **make:observer UserObserver --model=User** artisan komutunu kullanabiliriz.
