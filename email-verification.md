@@ -134,7 +134,7 @@ protected $listen = [
 ```
   
 Bu not [Laravel'in Orjinal Dökümantasyonu](https://laravel.com/docs/8.x)'ndaki [Email Verification](https://laravel.com/docs/8.x/verification) bölümündeki veriler kullanılarak 
-azılranmıştır.
+hazırlanmıştır.
   
   
   
