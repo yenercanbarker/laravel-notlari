@@ -1,0 +1,48 @@
+# Socket.io
+
+* Anlık işlemlerde socket kullanabiliriz.
+
+* Socket için bilinmesi gerekenler;
+  * Node.js üzerinden çalıştırabiliyoruz (server-side)
+  * Js CDN'i HTML'e dahil ederek kullanmaya başlayabiliriz (client-side)
+  * Server Side ve Client Side olmak üzere 2 şekilde kullanılıyor.
+  
+* Client Side üzerinde bir event, bir fonksiyon, bir buton her neyse tetiklendiğinde, **emit** ile Server Side bilgilendirilir.
+
+* Server Side üzerinde **on** ile gönderdiğimiz event'i yakalayarak işlemler yapabiliriz.
+
+* Server Side üzerinde DOM işlemleri yapılamıyor tabii ki, tekrar Client Side'a göndererek orada işlem yapabiliyoruz.
+
+* Socket.io üzerinde bütün komutlar mevcut, komutları kullanırken; o komutun client side mı, server side mı olup olmadığını bilmemiz gerekmektedir.
+
+* **npm install** ile package.json dosyası oluşturulabilir veya direkt kurulumlarla da package.json dosyası oluşturulabilir.
+
+* **npm i express --save** ile express indirilir.
+
+* **npm i socket.io --save** ile socket.io indirilir.
+
+* **server.js** dosyası oluşturup, içerisine bu kodları yazarak, ve terminalde **nodemon server.js** ile sunucuyu ayağa kaldırarak kullanmaya başlayabiliriz.
+
+```js
+const express = require('express');
+const app = express();
+const server = require('http').createServer(app);
+
+const io = require('socket.io')(server, {
+    cors: {origin: "*"}
+});
+
+io.on('connection', () => {
+   
+});
+
+io.on('disconnect', () => {
+
+});
+
+server.listen(3000, () => {
+    console.log('Server is running');
+});
+```
+
+* [Socket.io komutları :](https://socket.io/docs/v4/emit-cheatsheet/)
