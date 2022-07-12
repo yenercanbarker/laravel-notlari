@@ -131,12 +131,45 @@ Cache::flush();
 Cache::tags(['a', 'b'])->put('key', 'value', $seconds);
 ```
 
+## Redis Config
+
+* Redis kullanımını için **.env** dosyasına eklenmesi gereken veriler : 
+
+```php
+REDIS_CLIENT=predis
+```
+
+* Redis kullanımı için **config/database.php** içerisine eklenmesi gereken veriler : 
+
+```php
+    'redis' => [
+        'client' => 'predis',
+        'default' => [
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 0,
+        ],
+        'cache' => [
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 0,
+        ],
+    ],
+```
+
+* Redis kullanımı için **config/app.php** içerisinde **aliases** bölümünde **'Redis'** yorum satırında ise, onu yorum satırından çıkartmak gerekmektedir.
+
+* Redis içerisinde bulunan bütün keyleri görmek için;
+
+```php
+$redis = new \Predis\Client();
+dd($redis->keys('*'));
+```
+
 Bu ders notu [Laravel'in orjinal dökümantasyonu](https://laravel.com/docs/9.x)'ndaki [Cache](https://laravel.com/docs/9.x/cache) bölümündeki
 veriler kullanılarak hazırlanmıştır.
-
-
-
-
 
 
 
